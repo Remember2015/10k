@@ -7,6 +7,9 @@
 	margin: 0;
 	text-decoration: none;
 }
+html {
+	font-size: 16px;
+}
 body {
 	background: #888;
 	font-size: 16px;
@@ -25,31 +28,49 @@ nav {
 	position: fixed;
 	right: 1rem;
 	top: 32%;
-	width: 1.5rem;
-	border-radius: 1.5rem;
-	background: rgba(255,255,255,0.2);
-	padding: 0.4rem 0.3rem;
+	width: 0.5rem;
 }
 nav a {
 	float: left;
 	display: inline-block;
-	width: 0.9rem;
-	height: 0.9rem;
+	width: 0.75rem;
+	height: 0.75rem;
 	border-radius: 1rem;
+	border: 0.1875rem solid transparent;
 	background: rgba(255,255,255,0.4);
 	color: #333;
 	transition: all 0.5s;
 	position: relative;
-	margin-bottom: 0.3rem;
+	margin-bottom: 0.3125rem;
 	font-size: 0.85rem;
+	background-clip: content-box;
+}
+nav a:before {
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 0.25rem;
+	background: rgba(255,255,255,0.2);
+	left: 0.125rem;
+	top: -0.34375rem;
+}
+nav a:after {
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 0.25rem;
+	background: rgba(255,255,255,0.2);
+	left: 0.125rem;
+	bottom: -0.34375rem;
 }
 nav a:last-child {
 	margin-bottom: 0;
 }
 nav a span {
+	font-size: 0.75rem;
 	opacity: 0;
 	position: absolute;
-	right: 2.5rem;
+	right: 2rem;
 	display: inline-block;
 	padding: 0.25rem 0.5rem;
 	background: rgba(255,255,255,0.5);
@@ -57,13 +78,14 @@ nav a span {
 	border-radius: 0.25rem;
 	width: 8rem;
 	text-align: center;
+	top: -0.5rem;
 }
 nav a:hover, nav a:active, nav a.active {
 	background: #fff;
 }
 nav a:hover span, nav a:active span, nav a.active span {
 	opacity: 1;
-	right: 1.5rem;
+	right: 1rem;
 }
 sup {
 	font-size: 30%;
@@ -75,7 +97,8 @@ p {
 	font-size: 4rem;
 }
 h2,p{
-	margin-bottom: 1rem; 
+	margin-bottom: 1rem;
+	line-height: 1.5em;
 }
 .tac {
 	text-align: center;
@@ -130,11 +153,11 @@ footer a:hover:after,footer a:active:after {
 }
 .chart {
 	display: flex;
-	align-items: center;
+	align-items: top;
 	justify-content: center;
 	text-align: center;
 	width: 100%;
-	padding: 2rem 0
+	padding-bottom: 2rem
 }
 .chart .left{
 	width: 40%;
@@ -146,6 +169,7 @@ footer a:hover:after,footer a:active:after {
 	margin: 0 2%;
 	display: inline-block;
 	font-size: 2rem;
+	line-height: 2.5em;
 	color: #fff;
 	word-break: break-all;
 }
@@ -162,23 +186,17 @@ footer a:hover:after,footer a:active:after {
 		font-size: 12px;
 	}
 	p {
-		font-size: 2.75rem;
+		font-size: 2rem;
 	}
 	nav {
 		right: 0.5rem;
-		width: 1.2rem;
-	}
-	nav a {
-		float: left;
-		display: inline-block;
-		width: 0.6rem;
-		height: 0.6rem;
 	}
 	.chart svg {
 		width: 2rem;
 		height: 2rem;
 	}
 	.chart .middle {
-		font-size: 1rem;
+		font-size: .75rem;
+		line-height: 1.5em;
 	}
 }

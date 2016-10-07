@@ -10,9 +10,9 @@ var shuffle = function(arr) {
 	});
 }
 var bg = function() {
-	var cs = [rnd(40,8),rnd(60,120),rnd(180,240),rnd(120,180)];
+	var cs = [rnd(60,120),rnd(100,160),rnd(140,200)];
 	cs = shuffle(cs);
-	cs.pop();
+	// cs.pop();
 	return "rgb(" + cs.join(',') + ')';
 }
 var createEl = function(tag, csname, inner) {
@@ -67,6 +67,10 @@ for (var i = 0; i < charts.length; i++) {
 	chel.appendChild(middle);
 	chel.appendChild(right);
 }
+var clonArea = clon(q('#pet')[0]);
+clonArea.setAttribute('width', "196px");
+clonArea.setAttribute('height', "196px");
+q('#logo')[0].appendChild(clonArea);
 window.onscroll = function() {
 	// console.log(document.body.scrollTop);
 };
