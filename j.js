@@ -39,10 +39,9 @@ var genIcons = function(icon, count, csname) {
 	return con;
 
 }
+alert(q('section').length);
 q('section').forEach(function(item){
-	alert(bg());
 	item.style.background = bg();
-	alert(item.style.background);
 });
 q('p.rept').forEach(function(item){
 	var v = item.getAttribute('data-d');
@@ -68,4 +67,4 @@ q('p.rept').forEach(function(item){
 });
 window.onscroll = function() {
 	// console.log(document.body.scrollTop);
-}
+};
