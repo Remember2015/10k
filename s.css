@@ -89,7 +89,7 @@ nav a span {
 nav a:hover, nav a:active, nav a.active {
 	background: #fff;
 }
-nav a:hover span, nav a:active span, nav a:focus span, nav a.active span {
+nav a:hover span, nav a:active span, nav a:focus span {
 	opacity: 1;
 	right: 1rem;
 }
