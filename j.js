@@ -39,11 +39,13 @@ var genIcons = function(icon, count, csname) {
 	return con;
 
 }
-alert(q('section').length);
-q('section').forEach(function(item){
-	item.style.background = bg();
-});
-q('p.rept').forEach(function(item){
+var sections = q('section');
+for (var i = 0; i < sections.length; i++) {
+	sections[i].style.background = bg();
+}
+var charts = q('p.rept');
+for (var i = 0; i < charts.length; i++) {
+	var item = charts[i];
 	var v = item.getAttribute('data-d');
 	v = v.split(':');
 	var a = parseFloat(v[0]);
@@ -64,7 +66,7 @@ q('p.rept').forEach(function(item){
 	chel.appendChild(left);
 	chel.appendChild(middle);
 	chel.appendChild(right);
-});
+}
 window.onscroll = function() {
 	// console.log(document.body.scrollTop);
 };
