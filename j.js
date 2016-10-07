@@ -104,10 +104,10 @@ window.onscroll = function() {
 	document.body.scrollTop = window.innerHeight * current;
 
 	activeNav(navs[current-1]);
-	
+
 	setTimeout(function() {
 		isAnimating = false;
-	}, 500);
+	}, 750);
 };
 if (window.location.hash) {
 	if (q(window.location.hash)) {
