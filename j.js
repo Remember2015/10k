@@ -71,6 +71,54 @@ var clonArea = clon(q('#pet')[0]);
 clonArea.setAttribute('width', "196px");
 clonArea.setAttribute('height', "196px");
 q('#logo')[0].appendChild(clonArea);
+
+var current = 0;
+var main = q('main')[0];
+var isAnimating = false;
+var navs = q('nav a');
+var activeNav = function(ac) {
+	for (var i = 0; i < navs.length; i++) {
+		navs[i].classList.remove('active');
+	}
+	if (ac)
+		ac.classList.add('active');
+}
 window.onscroll = function() {
-	// console.log(document.body.scrollTop);
+	if (isAnimating) {
+		document.body.scrollTop = window.innerHeight * current;
+		return;
+	};
+	isAnimating = true;
+	var angle = document.body.scrollTop / window.innerHeight;
+
+	if (angle > current) {
+		current = angle == parseInt(angle) ? angle : parseInt(angle) + 1;
+	} else if (angle < current) {
+		current = parseInt(angle);
+	}
+	if (current < 0) current = 0;
+	if (current > 11) current = 11;
+
+	main.style.transform = "translateY( -"+100*current+"vh )";
+	main.parentNode.scrollTop = 0;
+	document.body.scrollTop = window.innerHeight * current;
+
+	activeNav(navs[current-1]);
+	
+	setTimeout(function() {
+		isAnimating = false;
+	}, 500);
 };
+if (window.location.hash) {
+	if (q(window.location.hash)) {
+		setTimeout(function() {
+			document.body.scrollTop = main.parentNode.scrollTop;
+			main.parentNode.scrollTop = 0;
+		}, 100);
+	}
+}
+for (var i = 0; i < navs.length; i++) {
+	navs[i].onclick = function(e) {
+		document.body.scrollTop = q(this.getAttribute('href'))[0].offsetTop;
+	};
+}
