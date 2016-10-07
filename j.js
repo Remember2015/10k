@@ -40,11 +40,9 @@ var genIcons = function(icon, count, csname) {
 
 }
 q('section').forEach(function(item){
-	try {
-		item.style.background = bg();
-	} catch (e) {
-		alert(JSON.stringify(e));
-	}
+	alert(bg());
+	item.style.background = bg();
+	alert(item.style.background);
 });
 q('p.rept').forEach(function(item){
 	var v = item.getAttribute('data-d');
