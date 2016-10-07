@@ -6,7 +6,7 @@ var rnd = function(min, max) {
 }
 var shuffle = function(arr) {
 	return arr.sort(function() {
-		return Math.random()>.5 ? -1 : 1; 
+		return Math.random() > 0.5 ? -1 : 1; 
 	});
 }
 var bg = function() {
@@ -40,7 +40,11 @@ var genIcons = function(icon, count, csname) {
 
 }
 q('section').forEach(function(item){
-	item.style.background = bg();
+	try {
+		item.style.background = bg();
+	} catch (e) {
+		alert(JSON.stringify(e));
+	}
 });
 q('p.rept').forEach(function(item){
 	var v = item.getAttribute('data-d');
@@ -64,3 +68,6 @@ q('p.rept').forEach(function(item){
 	chel.appendChild(middle);
 	chel.appendChild(right);
 });
+window.onscroll = function() {
+	// console.log(document.body.scrollTop);
+}
