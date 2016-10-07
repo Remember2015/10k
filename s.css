@@ -14,13 +14,14 @@ body {
 	background: #888;
 	font-size: 16px;
 	color: #fff;
-	height:1200vh;
+	height:1300vh;
 }
 header{
 	width: 100%;
 	position: fixed;
 	left: 0;
 	top: 0;
+	z-index: 200;
 	padding: 1rem  0;
 	background: rgba(255,255,255,0.15);
 }
@@ -28,6 +29,7 @@ nav {
 	position: fixed;
 	right: 1rem;
 	top: 32%;
+	z-index: 200;
 	width: 0.5rem;
 }
 nav a {
@@ -49,19 +51,19 @@ nav a:before {
 	position: absolute;
 	content: "";
 	width: 2px;
-	height: 0.25rem;
+	height: 0.24rem;
 	background: rgba(255,255,255,0.2);
 	left: 0.125rem;
-	top: -0.34375rem;
+	top: -0.345rem;
 }
 nav a:after {
 	position: absolute;
 	content: "";
 	width: 2px;
-	height: 0.25rem;
+	height: 0.24rem;
 	background: rgba(255,255,255,0.2);
 	left: 0.125rem;
-	bottom: -0.34375rem;
+	bottom: -0.345rem;
 }
 nav a:last-child {
 	margin-bottom: 0;
@@ -83,7 +85,7 @@ nav a span {
 nav a:hover, nav a:active, nav a.active {
 	background: #fff;
 }
-nav a:hover span, nav a:active span, nav a.active span {
+nav a:hover span, nav a:active span, nav a:focus span, nav a.active span {
 	opacity: 1;
 	right: 1rem;
 }
@@ -96,7 +98,7 @@ h1 {
 p {
 	font-size: 4rem;
 }
-h2,p{
+h2,p {
 	margin-bottom: 1rem;
 	line-height: 1.5em;
 }
@@ -117,7 +119,7 @@ section {
 	text-align: center;
 	width: 100%;
 	height: 100vh;
-	color: rgba(255,255,255,0.8)
+	color: rgba(255,255,255,0.8);
 }
 footer {
 	line-height: 1.75rem;
